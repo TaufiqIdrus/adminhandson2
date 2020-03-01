@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Manage Dokter</title>
+    <title>Insert Dokter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="Choose between regular React Bootstrap tables or advanced dynamic ones.">
 
@@ -133,77 +133,34 @@
         <div class="app-main">
             <?php include 'templates/sidebar.php' ?>
             <div class="app-main__outer">
-                <div class="app-main__inner">
-                    <div class="app-page-title">
-                        <div class="page-title-wrapper">
-                            <div class="page-title-heading">
-                                <div>Tabel Dokter
-                                    <div class="page-title-subheading">Pengajar Berprofesi Dokter pada Handson
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page-title-actions">
-                                <a href="dokter_form_insert.php" class="mb-2 mr-2 btn btn-primary">Insert Dokter</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-card mb-3 card">
-                        <div class="card-body">
-                            <table style="width: 100%;" id="example" class="table table-hover table-striped table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama dokter</th>
-                                        <th>Spesialis</th>
-                                        <th>Rating</th>
-                                        <th>Insert date</th>
-                                        <th>Last update</th>
-                                        <th>Menu</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    include 'php/koneksi.php';
-                                    $sql = "SELECT * FROM `doctor`";
-                                    $hasil = $koneksi->query($sql);
-                                    while ($dokter = $hasil->fetch_assoc()) { ?>
-                                        <tr>
-                                            <td><?= $dokter['id_doctor'] ?></td>
-                                            <td><?= $dokter['name_doctor'] ?></td>
-                                            <td><?= $dokter['speciality'] ?></td>
-                                            <td><?= $dokter['rating'] ?></td>
-                                            <td><?= $dokter['insert_date'] ?></td>
-                                            <td><?= $dokter['last_update'] ?></td>
-                                            <td>
-                                                <form action="php/dokter_delete.php" method="post">
-                                                    <button type="submit" class="badge badge-danger" name="id_doctor" value="<?= $dokter['id_doctor'] ?>">Delete</button>
-                                                </form>
-                                                <form action="dokter_form_update.php" method="post">
-                                                    <button type="submit" class="badge badge-success" name="id_doctor" value="<?= $dokter['id_doctor'] ?>">Update</button>
-                                                </form>
-                                                <form action="dokter_detail.php" method="post">
-                                                    <button type="submit" class="badge badge-primary" name="id_doctor" value="<?= $dokter['id_doctor'] ?>">Detail</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    <?php
-                                    } ?>
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Nama dokter</th>
-                                        <th>Spesialis</th>
-                                        <th>Rating</th>
-                                        <th>Insert date</th>
-                                        <th>Last update</th>
-                                        <th>Menu</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
+                <div class="card-body">
+                    <a href="dokter.php" class="mb-2 mr-2 btn btn-secondary">Kembali</a>
+                    <h1>Insert Dokter</h1>
+                    <div class="divider"></div>
+                    <form action="php/dokter_insert.php" method="POST">
+                        <label for="namadokter" class="">Nama Dokter</label>
+                        <input name="namadokter" type="text" class="form-control">
+
+                        <label for="spesialis" class="">Spesialis</label>
+                        <input name="spesialis" type="text" class="form-control">
+
+                        <label for="riwayatpendidikan" class="">Riwayat Pendidikan</label>
+                        <textarea name="riwayatpendidikan" type="textarea" class="form-control"> </textarea>
+
+                        <label for="riwayatpekerjaan" class="">Riwayat Pekerjaan</label>
+                        <textarea name="riwayatpekerjaan" type="textarea" class="form-control"> </textarea>
+
+                        <label for="motto" class="">Motto</label>
+                        <textarea name="motto" type="textarea" class="form-control"> </textarea>
+                        <div class="divider"></div>
+                        <button type="submit" class="btn btn-primary" name="insert">Insert</button>
+
+
+
+
+                    </form>
                 </div>
+
             </div>
         </div>
     </div>
