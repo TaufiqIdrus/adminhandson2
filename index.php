@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Analytics Dashboard - This is an example dashboard created using build-in elements and components.</title>
+    <title>Dashboard</title>
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
@@ -139,68 +139,7 @@
             </div>
         </div>
         <div class="app-main">
-            <div class="app-sidebar sidebar-shadow">
-                <div class="scrollbar-sidebar">
-                    <div class="app-sidebar__inner">
-                        <ul class="vertical-nav-menu">
-                            <li class="app-sidebar__heading">Menu</li>
-                            <li>
-                                <a href="#">
-                                    <i class="metismenu-icon pe-7s-rocket"></i>
-                                    Dashboards
-                                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="dashboard.html">
-                                            <i class="metismenu-icon">
-                                            </i>Ringkasan
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="konfirmasi_pembayaran.html">
-                                            <i class="metismenu-icon">
-                                            </i>Konfirmasi Pembayaran
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="log_aktivitas.html">
-                                            <i class="metismenu-icon">
-                                            </i>Log Aktifitas
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <a href="#">
-                                <i class="metismenu-icon pe-7s-display2"></i>
-                                Tabel
-                                <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                            </a>
-                            <ul class="mm-show">
-                                <li>
-                                    <a href="tabel_dokter.html">
-                                        <i class="metismenu-icon">
-                                        </i>Tabel Dokter
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tabel_user.html">
-                                        <i class="metismenu-icon">
-                                        </i>Tabel User
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="tabel_courses.html" class="mm-active">
-                                        <i class="metismenu-icon">
-                                        </i>Tabel Courses
-                                    </a>
-                                </li>
-                            </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <?php include 'templates/sidebar.php' ?>
             <div class="app-main__outer">
                 <div class="app-main__inner">
                     <div class="app-page-title">
